@@ -1,0 +1,8 @@
+<div>
+  <input type="text" placeholder="Dictionary Search"#input (keyup.enter)="searchWord(input)">
+  <input type="button" value="Search" (click)="searchWord(input)">
+</div>
+
+<div *ngIf = "start">
+  <app-word [word] = "word"></app-word>
+</div>

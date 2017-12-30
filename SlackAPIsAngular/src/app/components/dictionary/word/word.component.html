@@ -1,0 +1,20 @@
+<div *ngIf = "word != null">
+  <p> Word: {{word.getWord()}} </p>
+  <p> Source: {{word.getSource()}} </p>
+  <p> <strong>Definitions:</strong>
+    <li *ngFor = "let definition of word.getDefinitions()">
+      {{definition.getDefinition()}}
+      <div *ngIf = "definition.getExamples() != null">
+        <ul><strong>Examples:</strong>
+          <li *ngFor = "let example of definition.getExamples()">
+            {{example}}
+          </li>
+        </ul>
+      </div>
+    </li>
+  </p>
+</div>
+
+<div *ngIf = "word == null">
+  <p> No word found </p>
+</div>

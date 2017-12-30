@@ -1,0 +1,14 @@
+
+<input type="text" placeholder="GitHub User Name"#input (keyup.enter) = "getUser(input)">
+
+<input type="button" value="Search" (click)="getUser(input)">
+<div *ngIf="start">
+  <div *ngIf = "user != null">
+    Full name: {{user.getName()}} <br/>
+    User name: {{user.getUserName()}} <br/>
+    Number of public reposities: {{user.getNumOfRepos()}}
+  </div>
+  <div *ngIf = "user == null">
+    User name does not exist
+  </div>
+</div>
