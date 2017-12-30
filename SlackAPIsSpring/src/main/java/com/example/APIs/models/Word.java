@@ -29,4 +29,15 @@ public class Word {
     public List<Definition> getDefinitions() {
         return definitions;
     }
+
+    @Override
+    public String toString(){
+        String definitionsToString = "";
+
+        if( definitions != null){
+            definitionsToString = definitions.toString();
+        }
+
+        return "Word: " + word + ", Source: " + source + " Definitions: "+ definitionsToString;
+    }
 }

@@ -29,4 +29,9 @@ public class GitHubUser {
     public String getFullName() {
         return fullName;
     }
+
+    @Override
+    public String toString(){
+        return "Full name: "+fullName+", User name: "+userName+", Bio: "+bio+", Number of public repos: "+publicRepos;
+    }
 }

@@ -33,7 +33,7 @@ public class GitHubControllerTest {
     RestTemplate restTemplate;
 
     GitHubUser mockUser = new GitHubUser("Wesley","wsconnors");
-    String mockJson = "{\"id\":0,\"login\":\"wsconnors\",\"bio\":null,\"public_repos\":0,\"name\":\"Wesley\"}";
+    String mockJson = "{\"login\":\"wsconnors\",\"bio\":null,\"public_repos\":0,\"name\":\"Wesley\"}";
 
     @Test
     public void getUserTestUserExist() throws Exception {

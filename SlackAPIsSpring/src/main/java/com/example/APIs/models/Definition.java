@@ -21,4 +21,10 @@ public class Definition{
     public ArrayList<String> getExamples() {
         return examples;
     }
+
+    @Override
+    public String toString(){
+        return " Definition: " + definition +
+                " Examples: " + examples;
+    }
 }

@@ -2,6 +2,7 @@ package com.example.APIs.ServiceTests;
 
 import com.example.APIs.models.GitHubUser;
 import com.example.APIs.services.GitHubService;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,14 +33,25 @@ public class GitHubServiceTest {
     }
 
     @Test
-    public void getUserByUserNameTest(){
+    public void getUserByUserNameTestGoodReturn(){
         when(restTemplate.getForObject(Mockito.anyString(),Mockito.any())).thenReturn(mockUser);
 
-//        GitHubUser actual = gitHubService.getUserByUserName("anyString");
-//
-//        Assert.assertEquals(mockUser.getFullName(),actual.getFullName());
+        GitHubUser actual = gitHubService.getUserByUserName("validUserName");
+
+        Assert.assertEquals(mockUser.toString(),actual.toString());
 
     }
+
+    @Test
+    public void getUserByUserNameTestNoReturn(){
+        when(restTemplate.getForObject(Mockito.anyString(),Mockito.any())).thenReturn(null);
+
+        GitHubUser actual = gitHubService.getUserByUserName("invalidUserName");
+
+        Assert.assertNull(actual);
+
+    }
+
 
 
 

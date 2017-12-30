@@ -18,7 +18,6 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = DictionaryController.class, secure = false)
 public class DictionaryControllerTest {
@@ -41,7 +40,7 @@ public class DictionaryControllerTest {
 
         when(dictionaryService.getWordObj(Mockito.anyString(),Mockito.anyString())).thenReturn(mockWordObj);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/APIs/anyWord"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/dictionary/anyWord"))
                 .andExpect(content().string(mockJson))
                 .andExpect(status().isOk());
     }
@@ -49,9 +48,9 @@ public class DictionaryControllerTest {
     @Test
     public void getDefinitionWordTestWordDoesNotExist() throws Exception {
 
-        when(dictionaryService.getWordObj(Mockito.anyString(),Mockito.anyString())).thenThrow(NullPointerException.class);
+        when(dictionaryService.getWordObj(Mockito.anyString(),Mockito.anyString())).thenReturn(null);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/APIs/anyWord"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/dictionary/anyWord"))
                 .andExpect(status().isNoContent());
     }
 }
