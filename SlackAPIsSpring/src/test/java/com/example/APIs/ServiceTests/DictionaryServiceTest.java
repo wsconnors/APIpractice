@@ -50,8 +50,7 @@ public class DictionaryServiceTest {
         String mockBadReturn = "{}";
         mockBadResponse = new ResponseEntity<>(mockBadReturn,HttpStatus.OK);
 
-        mockNoResponse = new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
+        mockNoResponse = new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
         ArrayList<String> mockExamples = new ArrayList<>();
         mockExamples.add("this stupid shit");

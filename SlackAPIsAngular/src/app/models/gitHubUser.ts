@@ -23,4 +23,11 @@ export class GitHubUser {
   getNumOfRepos():number{
     return this.numOfRepos;
   }
+
+  toString():string{
+    return "Full name: "+this.name+
+    "<br>User name: "+this.userName+
+    "<br>Bio: "+this.bio+
+    "<br>Number of public repos: "+this.numOfRepos;
+  }
 }

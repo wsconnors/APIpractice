@@ -1,5 +1,5 @@
 
-<input type="text" placeholder="GitHub User Name"#input (keyup.enter) = "getUser(input)">
+<input type="text" placeholder="GitHub User Name" #input (keyup.enter) = "getUser(input)">
 
 <input type="button" value="Search" (click)="getUser(input)">
 <div *ngIf="start">
